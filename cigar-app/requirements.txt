@@ -6,3 +6,6 @@ pydantic
 asyncpg
 bcrypt
 python-dotenv
+psycopg2-binary
+passlib[bcrypt]
+python-jose

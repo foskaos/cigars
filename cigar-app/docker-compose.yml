@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   app:
@@ -8,7 +8,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql+asyncpg://user:password@db/cigar_db
+      - DATABASE_URL=postgresql+psycopg2://user:password@db/cigar_db
+      - PYTHONPATH=/app
     depends_on:
       - db
 

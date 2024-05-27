@@ -1,10 +1,17 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    username: str | None = None
 class CigarBase(BaseModel):
     name: str
     brand: str
-    origin: str
+    origin: Optional[str] = None
     flavor_notes: Optional[str] = None
     rating: Optional[int] = None
 
