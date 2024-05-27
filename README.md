@@ -320,7 +320,3 @@ Contributions are welcome! Please fork the repository and create a pull request 
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-This comprehensive README file should provide a clear and complete guide for the front-end developer to understand and use the backend API. If there are any further questions or additional details required, please feel free to ask.
