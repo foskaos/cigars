@@ -3,11 +3,14 @@ FROM python:3.11
 WORKDIR /app
 
 COPY ./app /app
-COPY ./alembic /alembic
-COPY alembic.ini /alembic.ini
+COPY ./alembic alembic
+COPY alembic.ini alembic.ini
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN chmod -R 777 alembic/versions
+RUN chown -R root:root alembic/versions
 
 # Set the PYTHONPATH environment variable
 ENV PYTHONPATH="${PYTHONPATH}:/app"

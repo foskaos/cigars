@@ -35,12 +35,12 @@ async def create_user(db: AsyncSession, user: UserCreate):
 
 async def get_user_by_username(db: AsyncSession, username: str):
     result = await db.execute(
-        select(User).options(selectinload(User.cigars)).where(User.username == username)
+        select(User).where(User.username == username)
     )
     return result.scalar_one_or_none()
 
-async def create_cigar(db: AsyncSession, cigar: CigarCreate, user_id: int):
-    db_cigar = Cigar(**cigar.dict(), owner_id=user_id)
+async def create_cigar(db: AsyncSession, cigar: CigarCreate):
+    db_cigar = Cigar(**cigar.dict())
     db.add(db_cigar)
     await db.commit()
     await db.refresh(db_cigar)

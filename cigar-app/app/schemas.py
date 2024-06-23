@@ -12,15 +12,15 @@ class CigarBase(BaseModel):
     name: str
     brand: str
     origin: Optional[str] = None
-    flavor_notes: Optional[str] = None
-    rating: Optional[int] = None
+    ring_gauge: Optional[int] = None
+    length: Optional[int] = None
 
 class CigarCreate(CigarBase):
     pass
 
 class Cigar(CigarBase):
     id: int
-    owner_id: int
+    # owner_id: int
 
     class Config:
         orm_mode = True

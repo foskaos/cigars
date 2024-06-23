@@ -8,7 +8,7 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
-    cigars = relationship("Cigar", back_populates="owner")
+    #cigars = relationship("Cigar", back_populates="owner")
 
 class Cigar(Base):
     __tablename__ = "cigars"
@@ -16,7 +16,7 @@ class Cigar(Base):
     name = Column(String, index=True)
     brand = Column(String)
     origin = Column(String)
-    flavor_notes = Column(String)
-    rating = Column(Integer)
-    owner_id = Column(Integer, ForeignKey("users.id"))
-    owner = relationship("User", back_populates="cigars")
+    ring_gauge = Column(Integer)
+    length = Column(Integer)
+    # owner_id = Column(Integer, ForeignKey("users.id"))
+    # owner = relationship("User", back_populates="cigars")

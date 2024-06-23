@@ -14,4 +14,4 @@ async def read_cigars(skip: int = 0, limit: int = 10, db: AsyncSession = Depends
 
 @router.post("/", response_model=Cigar)
 async def add_cigar(cigar: CigarCreate, db: AsyncSession = Depends(get_db)):
-    return await create_cigar(db=db, cigar=cigar, user_id=1)  # Ensure this function is awaited
+    return await create_cigar(db=db, cigar=cigar)  # Ensure this function is awaited
